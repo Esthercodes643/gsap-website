@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap');
+
+:root{
+    --white-color :  #ffffff;
+    --white-color-300 : #f1f3f9;
+    --black-color : #111213;
+    --lightgray-color : #838383;
+
+    --border-color : 2px solid rgba(255, 255, 255, 0.5);
+    --text-strokes : 2px var(--white-color);
+
+    --primary-font : 'Parkinsans', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--black-color);
+    color : var(--primary-font);
+    font-family: var(--primary-font);
+
+}
+
+.container{
+    max-width : 1500px;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+
+
+}
