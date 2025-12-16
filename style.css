@@ -21,7 +21,7 @@
 body{
     height: 100vh;
     background-color: var(--black-color);
-    color : var(--primary-font);
+    color : var(--primary-color);
     font-family: var(--primary-font);
 
 }
@@ -38,4 +38,67 @@ img{
     z-index: -1;
 
 
+}
+.nav__menu{
+    position: relative;
+}
+
+#hamburger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 58px;
+    height: 58px;
+    background-color: var(--white-color-300);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 999;
+    position: fixed;
+    top: 50px;
+    right:50px;
+
+}
+
+#hamburger .line{
+    width: 20px;
+    height: 2px ;
+    background-color: var(--black-color);
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.2s;
+}
+
+#hamburger .line:nth-child(1) {top : 58%;}
+#hamburger .line:nth-child(2) {top : 42%;}
+
+#hamburger:hover .line:nth-child(1){
+    transform: rotate(-360deg) translateY(-5px);
+}
+
+#hamburger:hover .line:nth-child(2){
+    transform: rotate(4500deg) translateY(5px);
+}
+
+#hamburger.active .line:nth-child(1){
+    transform: rotate(45deg) translate(-3px, -4px);
+}
+
+#hamburger.active .line:nth-child(2){
+    transform: rotate(-45deg) translate(-3px, 4px);
+}
+
+/* Circle pointer */
+#pointerCircle{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border: var(--border-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    transform: translate(-50%, -50%);
+    z-index : 1000;
+    mix-blend-mode: difference;
 }
