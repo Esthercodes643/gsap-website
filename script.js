@@ -23,7 +23,19 @@ function handleMouseMove(e) {
 
     // move hamburger slightly based on mouse position
     hamburger.style.transform = distance < 120 ? `translate(${offsetX /4}px, ${offsetY / 4}px)` : `translate(0px, 0px)`;
+       
+    updatePointerAppearance();
+}
 
+/* Update the appearance of the pointer circle based on hover state */
+
+function updatePointerAppearance(){
+    const rect = hamburger.getBoundingClientRect();
+    const isClose = Math.hypot(targetX - (rect.left + rect.width / 2), targetY - (rect.top + rect.height / 2)) < 65;
+
+    pointerCircle.style.backgroundColor = isClose ? 'var(--white-color)' : '';
+    pointerCircle.style.width = pointerCircle.style.height = isClose ? '100px' : '80px';
+    
 }
 
 /* Smoothly animates the custom pointer to follow the mouse cursor */
